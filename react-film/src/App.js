@@ -11,9 +11,7 @@ function App() {
       <div className="film-list">
         <FilmListing db={TMDB.films} />
       </div>
-      <div className="film-details">
         <FilmDetails />
-      </div>
     </div>
   );
 }
