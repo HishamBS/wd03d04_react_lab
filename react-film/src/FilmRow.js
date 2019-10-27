@@ -1,22 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import FilmPoster from "./FilmPoster";
 import Fave from "./Fave";
-const FilmRow = props => {
-  let handleDetailsClick = film => {
+export default class FilmRow extends Component {
+  handleDetailsClick = film => {
     console.log(`Fetching details for ${film}`);
-    
-  }
-  return (
-    <div className="film-row" onClick={handleDetailsClick}>
-      <FilmPoster filmPoster={props.filmPoster} />
+  };
+  render() {
+    return (
+      <div className="film-row" onClick={this.handleDetailsClick}>
+        <FilmPoster filmPoster={this.props.filmPoster} />
 
-      <div className="film-summary">
-        <h1>{props.filmTitle}</h1>
-        <p>{props.filmDate}</p>
-        <Fave />
+        <div className="film-summary">
+          <h1>{this.props.filmTitle}</h1>
+          <p>{this.props.filmDate}</p>
+          <Fave />
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default FilmRow;
+    );
+  }
+}
